@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/newfile.css" rel="stylesheet">
+
+  </head>
+  <body >
+    <div class = "header">
+      <h1 align="center" >Please Select a Candidate to vote!!!</h1>
+    </div>
+    <form id="verification" align="center" onsubmit="App.vote(); return false;"> 
+      
+        Please vote
+        <input type="submit" value="Enter">
+      </form>
+      <form id="castVote" onsubmit="App.votecast(); return false;">
+  
+        <div class="gap">      
+          
+          <div id="dispCandidates" align="center">
+  
+          </div>
+          <select  id="candidateList" required > 
+  
+          </select><p></p>
+        </div>
+  
+        <!-- <input type="submit" value="vote"> -->
+  
+      </form>
+      
+    
+    <div id = "admin" class = "admin">
+      <h3 align="right"> Designed using <img src="symbol2.png" style="width: 7%; height:7%;" ;"> </h3>
+      </script>
+    </div>
+    
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

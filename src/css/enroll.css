@@ -1,0 +1,111 @@
+*{
+  margin: 0 ;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding : 2em;
+  text-align: center;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: #333; 
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)) ,url(nmit-1.png);
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: 18rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3em;
+  color: #ee6532;
+}
+
+main {
+
+  padding: 1em;
+
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 1.5em;
+  margin-top: auto;
+  line-height: 2em;
+}
+
+.time_date {
+  float: right;
+  font-size: 1.5rem;
+}
+
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding: 2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo {
+  
+  height: 3em;
+  margin-top: 0.2em;
+  margin-left: 1em;
+}
+.logo-design{
+  float:right;
+}
+
+span {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: green;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+input[type="password"] {
+  border: 1px solid #707070;
+  width: 35%;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  margin-left: 2em;
+  font-size: 2rem;
+}
+
+.admin-block {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5));
+  border-radius: .5em;
+  padding: 1em; 
+}
+
+.admin label {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 2em;
+}
+
+.admin a {
+  color: black;
+  padding: 0;
+  font-size: 2rem;
+}

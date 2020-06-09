@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //As January is 0.
+        var yyyy = today.getFullYear();
+        var dd1 = dd;
+        var mm1 = mm;
+        var m1 = m;
+        var s1 = s;
+        if(dd<10) dd='0'+dd;
+        if(mm<10) mm='0'+mm;
+        m = checkTime(m);
+        s = checkTime(s);
+        var x = document.getElementById("admin");
+        var y = document.getElementById("no_admin");
+        document.getElementById("date").innerHTML = "Date " +dd + "/" + mm + "/" + yyyy ;
+        document.getElementById("time").innerHTML = "Time " + h + ":" + m + ":" + s ;
+        if (h <= 16 && m1 < 26) {     //input the time condition to display the no_admin section
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+        else {
+          x.style.display = "block";
+          y.style.display = "none";
+        }
+        var t = setTimeout(startTime, 500);
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          } // add zero in front of numbers < 10
+          return i;
+        }
+      }
+    </script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/enroll.css" rel="stylesheet">
+    
+  </head>
+  <body onLoad = "startTime()">
+    <header>
+    	<h1 class = "title">Block Chain Voting Platform</h1> 
+    </header>
+    <main>
+    	<div class = "time_date">
+      		<div id = "date" style></div>
+      		<div id = "time" style></div>
+    	</div>
+   
+    	<div class = "index">
+	      <a href="enroll.html" id = "enroll" onclick="javascript:return validate_enroll()">
+	      <br><br><br>
+	      <h2>Enrollment(Voter and Candidate)</h2> </a>
+	      <a href="votenow.html" id = "vote" onclick="javascript:return validate_vote()"> 
+	      <h2>Voting Platform</h2> </a>
+	      <script>
+		        var dd;
+		        var mm;
+		        function validate_enroll() {
+		          var time = new Date();
+		          dd = time.getDate();
+		          mm = time.getMonth()+1;
+		          if(dd === 13 && mm === 5)
+		          {
+		            alert("Enrollment Period Expired!");
+		            return false;
+		          }
+		          else{
+		            return true;
+		          }
+		        }
+		        function validate_vote() {
+		          var time = new Date();
+		          dd = time.getDate();
+		          mm = time.getMonth()+1;
+              //if(dd >= 13 && dd <= 30 && mm === 5)
+              if(dd >= 1 && dd <= 30 && mm === 6)
+		          {
+		            return true;
+		          }
+		          else{
+		            alert("Can't Vote Now");
+		            return false;
+		          }
+		        }
+	      </script>
+	    </div>
+		
+    	<div class = "admin-block">
+    		<div id = "no_admin" class = "no_admin">
+    			<span>Admin Section</span><p style = "font-size:2.5rem; color: black;">Can be accessed on 01/05/2020 at 7 am</p><br/>
+    		</div>
+    		<div id = "admin" class = "admin">
+		        <span>Admin Section</span><br/>
+		        <label>Enter password:</label><input id='password' type='password' required/>
+		        <a href="results.html" onclick="javascript:return validatePass()" ><br>Results</a>
+		        <script>
+		          function validatePass(){
+		            if(document.getElementById('password').value == 'akashanil'){
+		             	return true;
+		            }else{
+		              	alert('wrong password!!');
+		              	return false;
+		            }
+		          }
+		        </script>
+      		</div>	
+
+    	</div>
+      	
+	</main>
+  <footer>
+    <div class="logo-design">
+      <h3>Designed by<img src="logo-2.png" class="logo"></h3>
+    </div>
+    <div id = "no_admin" class = "no_admin">
+      <h2>Department of CSE<br>Nitte Meenakshi Intitute of Technology, Bangalore-64</h2><br/>  </div>    
+  </footer>
+    	
+    	
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
