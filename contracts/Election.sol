@@ -91,9 +91,13 @@ contract Election {
     function setEnrollcd(string memory _uid,string memory _party) public {
 
         isEnrolledcd[_uid] = true;
-        if(keccak256(abi.encode(_party)) != keccak256("ind") ) {
+        string memory ind = "ind";
+        if(keccak256(abi.encodePacked(_party)) != keccak256(abi.encodePacked(ind)) ) {
          isPartyEnrolled[_party] = true;
         }
+        // if(bytes(_party).length < 11) {
+        //     isPartyEnrolled[_party] = true;
+        // }
         candidatesCount++;
         candidates[candidatesCount] = Candidate(_uid,0,_party,candidatesCount);
 
